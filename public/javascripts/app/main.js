@@ -9,7 +9,7 @@ require.config({
 		'dropdown': 'libs/bootstrap-dropdown',
 		'tab': 'libs/bootstrap-tab',
 		'bootstrap': 'libs/bootstrap',
-		'test': 'libs/test',
+		'text': 'libs/text',
 		'require': 'libs/require',
 		'models': 'models'
 	}
@@ -21,13 +21,46 @@ require(['require', 'collections/sidebartabs'], function(require, sidebartabs) {
 
 	// For debug, mannually add element 
 	sidebartabs.add({
-		tabName: 'Welcome',
-		tabContent: 'Welcome to use flash',
-		listHeaderName: 'General',
-		listItemName: 'Main',
-		active: true,
-		showTab: true,
-		showListItem: true
+        tabName:'Apply Leave',
+        tabNameId:'apply_leave_id',
+        tabNameTemplate:'tabtitle.jst',
+        tabContentId:'apply_leave_cont_id',
+        tabContTemplate:'tabcontent.jst',
+        listHeaderName:'LEAVE APPLICATION',
+        listItemName:'Apply leave',
+        listItemId:'apply_id',
+        listItemTemplate:'listitem.jst',
+        active:true,
+        showTab:false,
+        showListItem:true
+	});
+	sidebartabs.add({
+        tabName:'Query Leave',
+        tabNameId:'query_leave_id',
+        tabNameTemplate:'tabtitle.jst',
+        tabContentId:'query_leave_cont_id',
+        tabContTemplate:'tabcontent.jst',
+        listHeaderName:'LEAVE APPLICATION',
+        listItemName:'Query leave',
+        listItemId:'query_id',
+        listItemTemplate:'listitem.jst',
+        active:false,
+        showTab:false,
+        showListItem:true
+	});
+	sidebartabs.add({
+        tabName:'Query People',
+        tabNameId:'query_people_id',
+        tabNameTemplate:'tabtitle.jst',
+        tabContentId:'query_people_cont_id',
+        tabContTemplate:'tabcontent.jst',
+        listHeaderName:'RESOURCE MANAGEMENT',
+        listItemName:'Query People',
+        listItemId:'query_people_id',
+        listItemTemplate:'listitem.jst',
+        active:false,
+        showTab:false,
+        showListItem:true
 	});
 });
 

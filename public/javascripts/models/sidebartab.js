@@ -2,9 +2,14 @@ define(['jquery', 'underscore', 'backbone','views/sidebar','views/tabcontent'], 
 	var SidebarTab = Backbone.Model.extend({
     default:{
         tabName:'flash_tab',
-        tabContent:'flash_content',
+        tabNameId:'flash_tab_id',
+        tabNameTemplate:'tabtitle.jst',
+        tabContentId:'flash_content',
+        tabContTemplate:'tabcontent.jst',
         listHeaderName:'flash_header',
-        listItemName:'flash_list_item',
+        listItemName:'flash_list_name',
+        listItemId:'flash_list_item_id',
+        listItemTemplate:'sidebar.jst',
         active:false,
         showTab:false,
         showListItem:true

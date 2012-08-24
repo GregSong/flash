@@ -20,12 +20,7 @@ div.container-fluid
   div.row-fluid
     div.span2
       div#sidebar.well.sidebar-nav
-        ul.nav.nav-list
-          //li.nav-header Leave Manage
-          //li#apply_leave
-          //  a(href="#") Apply Leave
-          //li#query_leave
-          //  a(href="#") Query Leave
+        ul#sidebarul.nav.nav-list
     div.span10
       div
         ul#workTab.nav.nav-tabs
@@ -34,22 +29,4 @@ div.container-fluid
         div#tabCont.tab-content
           //div#welCont.tab-pane.active
             //p Welcome to Comverse Cienet
-
-script#apply_tab_tmp(type="text/template")
-  li#appTab
-    a(href="#appCont", data-toggle="tab") Apply Leave
-      i.icon-remove-sign
-
-script#apply_cont_tmp(type="text/template")
-  div#appCont.tab-pane
-    p Apply Leave
-
-script#query_tab_tmp(type="text/template")
-  li#quTab
-    a(href="#quCont", data-toggle="tab") Query Leave
-      i.icon-remove-sign
-
-script#query_cont_tmp(type="text/template")
-  div#quCont.tab-pane
-    p Query Leave
 
