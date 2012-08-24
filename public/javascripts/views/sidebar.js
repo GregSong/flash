@@ -1,7 +1,7 @@
 define(['jquery', 'underscore', 'backbone', 'text', 'models/sidebartab'], function($, _, Backbone, text, sidebartab) {
 	var SidebarView = Backbone.View.extend({
 		events: {
-			'click': 'show'
+			'click a': 'show'
 		},
 		initialize: function(item) {
 			// Bind click event 
@@ -16,10 +16,16 @@ define(['jquery', 'underscore', 'backbone', 'text', 'models/sidebartab'], functi
 					return item.innerHTML == that.get('listHeaderName');
 				});
 				if (header) {
-					that.view.el = $($(header).after(compiled_template(that.toJSON())));
+					var item = $(compiled_template(that.toJSON()));
+					$(header).after(item);
+					that.view.setElement(item);
 				} else {
-					header = $('ul#sidebarul.nav.nav-list').append('<li class=\'nav-header\'>' + that.get('listHeaderName') + '</li>');
-					that.view.el = $(header.append(compiled_template(that.toJSON())));
+					header = $("<li class='nav-header'></li>");
+          header.append(that.get('listHeaderName')); 
+					$('ul#sidebarul.nav.nav-list').append(header);
+					var item = $(compiled_template(that.toJSON()));
+          header.after(item);
+					that.view.setElement(item);
 				}
 			});
 		},
